@@ -1,10 +1,10 @@
-package com.example.myapplication32;
+package com.example.SladaApp;
 
 import android.os.Bundle;
 
-import com.example.myapplication.ui.NetworkService;
-import com.example.myapplication.ui.Post;
-import com.example.myapplication.ui.RegistrationBody;
+import com.example.SladaApp.ui.NetworkService;
+import com.example.SladaApp.ui.Post;
+import com.example.SladaApp.ui.RegistrationBody;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -16,10 +16,13 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
 import com.google.android.material.navigation.NavigationView;
+
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import android.view.Menu;
 
 import org.json.JSONObject;
@@ -51,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
+        // Passing each menu ID as a set of Ids because each //
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_group1, R.id.nav_group3, R.id.nav_group3, R.id.nav_group4)
@@ -61,13 +64,13 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        RegistrationBody body1 = new RegistrationBody("000000988876");
+        RequestBody body1 = new RequestBody("000000988876");
 
         String json = "{Login\":\"data\"}";
 
-//        ReBody registrationBody = ReBody.create(MediaType.parse("application/json"), json);
+        ReBody registrationBody = ReBody.create(MediaType.parse("/json"), json);
 
-        RequestBody requestBody = RequestBody.create(MediaType.parse("application/x-www-form-urlencoded; charset=utf-8"), json);
+        RequestBody requestBody = RequestBody.create(MediaType.parse("/x-www-form-urlencoded; charset=utf-8"), json);
         NetworkService.getInstance()
                 .getJSONApi()
                 .getPostWithID(body1, "api.php")
@@ -76,18 +79,15 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(@NonNull Call<Post> call, @NonNull Response<Post> response) {
                         Post post = response.body();
 
-                        Log.i("MSG_my0",response.toString() + "\n");
-
-//                      Log.i("MSG_my101",post.getAouth() + "\n");
-
-                        Log.i("MSG_my1",post.getID() + "\n");
+                        Log.i("MSG_my0", response.toString() + "\n");
+                        Log.i("MSG_my1", post.getID() + "\n");
 
                     }
 
                     @Override
                     public void onFailure(@NonNull Call<Post> call, @NonNull Throwable t) {
 
-                        Log.i("MSG_my5","Error occurred while getting request!");
+                        Log.i("MSG_my5", "Error occurred while getting request!");
                         t.printStackTrace();
                     }
                 });

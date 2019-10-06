@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.group1;
+package com.example.my.ui.group1;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

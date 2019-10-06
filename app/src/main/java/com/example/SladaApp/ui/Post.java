@@ -1,6 +1,7 @@
-package com.example.myapplication.ui;
+package com.example.SladaApp.ui;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
 public class Post {
     private String nameToSend;
 

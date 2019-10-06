@@ -1,9 +1,7 @@
-package com.example.myapplication.ui;
-
+package com.example.SladaApp.ui;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -13,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class NetworkService {
     private static NetworkService mInstance;
 
-    private static final String BASE_URL = "http://212.49.115.147:25443/slada/api.php?action=insert&devicename=devicename";
+    private static final String BASE_URL = "http://212.49.115.147:25443";
 
     private Retrofit mRetrofit;
 

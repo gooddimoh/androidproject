@@ -1,4 +1,4 @@
-package com.example.myapplication.ui;
+package com.example.SladaApp.ui;
 
 public class RegistrationBody {
     //private long id;

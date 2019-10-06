@@ -1,4 +1,4 @@
-package com.example.myapplication32.ui.group1;
+package com.example.my32.ui.group1;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.myapplication.R;
+import com.example.my.R;
 
 public class Group1Fragment extends Fragment {
 
